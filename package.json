@@ -1,0 +1,19 @@
+{
+  "name": "practice-with-js",
+  "version": "1.0.0",
+  "description": "exercises",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TetianaDiachenko/practice-with-JS.git"
+  },
+  "author": "Tetian Diachenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TetianaDiachenko/practice-with-JS/issues"
+  },
+  "homepage": "https://github.com/TetianaDiachenko/practice-with-JS#readme"
+}
