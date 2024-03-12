@@ -66,8 +66,55 @@
 // 		console.log('Not this time');
 // 		break;	
 // }
+// ===========Operators=================================================================
+console.log('arr' + " - object"); //arr - object (string)
+console.log(4 + +" - object"); // NaN
+console.log(4 + +"5"); // 9 (number)
+
+//+"5" - унарний +
+// ++ increment
+// -- decrement
+
+let incr = 10,
+	 decr = 10;
+
+// incr++;
+// decr--;
+
+// console.log(incr); // 11
+// console.log(decr); // 9
+
+// console.log(incr++); // 10
+// console.log(decr--); // 10
+
+console.log(++incr); // 11
+console.log(--decr); // 9
+
+console.log(5 % 2); // 1 залишок
+// = присвоєння
+// == порівнює значення - нестроге порівняння
+// === порівнює і значення і тип данних - строге порівняння
+
+console.log(2*4 == 8); // true
+console.log(2*4 === '8'); // false
+ 
+// оператор заперечення ! - повертає зворотнє значення
+const isChecked = false,
+		isClose = false;
+console.log(isChecked || !isClose); // true
+
+// Оператор нестрогий НЕ ДОРІВНЮЄ != і строгий !==
+console.log(2 + 2 * 2 != '6'); // false
+console.log(2 + 2 * 2 !== '6'); // true
+
 
 // ===========Logical operators=========================================================
+
+// && - логічний оператор І, має бути і правда і правда, щоб було true
+// і повертає перше false або останнє true
+// || - логічний оператор АБО, має бути хоча б одне правдиве, щоб було true.
+// Або повертає перше true або останнє false
+
 // const hamburge = 5;
 // const fries = null;
 // if (hamburge && fries) {
@@ -277,21 +324,21 @@
 // *********
 //***********
 
-function createFigure() {
-	const lines = 5;
-	let result = '';
+// function createFigure() {
+// 	const lines = 5;
+// 	let result = '';
 
-	for (let i = 0; i <= lines; i++) {
-		for(let j = 0; j < lines - i; j++) {
-			result += " ";
-		}
-		for(let j = 0; j < 2 * i + 1; j++) {
-			result += "*";
-		}
-		result +="\n";
-	}
+// 	for (let i = 0; i <= lines; i++) {
+// 		for(let j = 0; j < lines - i; j++) {
+// 			result += " ";
+// 		}
+// 		for(let j = 0; j < 2 * i + 1; j++) {
+// 			result += "*";
+// 		}
+// 		result +="\n";
+// 	}
 
-	console.log(result);
-	return result;
-}
-createFigure();
+// 	console.log(result);
+// 	return result;
+// }
+// createFigure();
