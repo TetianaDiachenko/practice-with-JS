@@ -263,7 +263,7 @@ console.log(2 + 2 * 2 !== '6'); // true
 // 	const arrayOfNumbers = [];
 
 // 	for (let i = 5; i < 11; i++) {
-// 		 arrayOfNumbers[i - 5] = i;         // or!!!
+// 		 arrayOfNumbers[i - 5] = i;         // or!!! 5 - 5 = 0
 // 	}
 
 // 	console.log(arrayOfNumbers);
@@ -274,7 +274,19 @@ console.log(2 + 2 * 2 !== '6'); // true
 
 
 
-// ==================Сycles*
+// ==================Loops*
+
+
+// Послідовність виконання циклів, від зовнішнього до внутрішього, який проходить до кінця
+// for (let i= 0; i < 3; i++) {
+// 	console.log('Количество итераций 1-го цикла:', i);
+// 	for (j=0; j < 3; j++) {
+// 		 console.log('Количество итераций 2-го цикла:', j)
+// 		 for (let k = 0; k < 3; k++) {
+// 			  console.log('Количество итераций 3-го цикла:', k)
+// 		 }
+// 	}
+// }
 
 // function firstTask() {
 // 	const arr = [3, 5, 8, 16, 20, 23, 50];
@@ -307,8 +319,12 @@ console.log(2 + 2 * 2 !== '6'); // true
 // 	const data = [5, 10, 'Shopping', 20, 'Homework'];
 // 	const result = [];
 
-// 	for (let i = 1; i <= data.length; i++){
-// 		result[i - 1] = data[data.length - i];
+// 	// for (let i = 1; i <= data.length; i++){
+// 	// 	result[i - 1] = data[data.length - i];
+// 	// }
+
+// 	for (let i = 0; i < data.length; i++){
+// 		result[i] = data[data.length - (i + 1)];
 // 	}
 
 // 	console.log(result);
@@ -316,20 +332,19 @@ console.log(2 + 2 * 2 !== '6'); // true
 // }
 // thirdTask(); // [ 'Homework', 20, 'Shopping', 10, 5 ]
 
-// ==================Сycles ** Piramid
+// ==================Loops ** Piramid
 //     *
 // 	***
 //   *****
 //  *******
 // *********
-//***********
 
 // function createFigure() {
 // 	const lines = 5;
 // 	let result = '';
 
-// 	for (let i = 0; i <= lines; i++) {
-// 		for(let j = 0; j < lines - i; j++) {
+// 	for (let i = 0; i < lines; i++) {
+// 		for(let j = 1; j < lines - i; j++) {
 // 			result += " ";
 // 		}
 // 		for(let j = 0; j < 2 * i + 1; j++) {
@@ -342,3 +357,61 @@ console.log(2 + 2 * 2 !== '6'); // true
 // 	return result;
 // }
 // createFigure();
+
+// console.log("*".repeat(10));
+
+// function createFigure() {
+// 	const lines = 5;
+// 	let result = '';
+
+// 	for (let i = 0; i < lines; i++) {
+// 		result += " ".repeat(lines - (i + 1));
+// 		result += "*".repeat(2 * i + 1); 
+// 		result +="\n";
+// 	}
+
+// 	console.log(result);
+// 	return result;
+// }
+// createFigure();
+
+
+// function createSq(lines) {
+// 	let result = '';
+// 	result += "* ".repeat(lines);
+// 	result +="\n";
+// 	for (let i = 0; i < lines - 2; i++) {
+// 		result += "* ";
+// 		result += "  ".repeat(lines - 2);
+// 		result += "* ";
+// 		result +="\n";
+// 	}
+
+// 	result += "* ".repeat(lines);
+// 	result +="\n";
+
+// 	console.log(result);
+// 	return result;
+// }
+// createSq(12); 
+
+function createRect(width, height) {
+	let result = '';
+
+	result += "* ".repeat(width);
+	result +="\n";
+	for (let i = 0; i < height - 2; i++) {
+		result += "* ";
+		result += "  ".repeat(width - 2);
+		result += "* ";
+		result +="\n";
+	}
+
+	result += "* ".repeat(width);
+	result +="\n";
+
+	console.log(result);
+	return result;
+}
+createRect(10, 5); 
+
