@@ -276,6 +276,40 @@ console.log(2 + 2 * 2 !== '6'); // true
 
 // ==================Loops*
 
+// let num = 50;
+// while (num < 55) {
+// 	console.log(num); // 50 51 52 53 54
+// 	num++;	
+// }
+
+// do {
+// 	console.log(num); // 50 51 52 53 54 
+// 	num++;
+// }
+// while (num < 55);
+
+// for (let i = 0; i < 8; i++) {
+// 	console.log(i);	         // 0 1 2 3 4 5 6 7
+// }
+
+// for (let i = 0; i < 8; i++) {
+// 		console.log(num); // 50 51 52 53 54 55 56 57
+// 		num++;
+// }
+
+// for (let i = 1; i < 10; i++) {
+// 	if (i === 6) {
+// 		break;
+// 	}
+// 	console.log(i); // 1 2 3 4 5
+// }
+
+for (let i = 1; i < 10; i++) {
+	if (i === 6) {
+		continue;
+	}
+	console.log(i); // 1 2 3 4 5 7 8 9
+}
 
 // Послідовність виконання циклів, від зовнішнього до внутрішього, який проходить до кінця
 // for (let i= 0; i < 3; i++) {
@@ -395,23 +429,23 @@ console.log(2 + 2 * 2 !== '6'); // true
 // }
 // createSq(12); 
 
-function createRect(width, height) {
-	let result = '';
+// function createRect(width, height) {
+// 	let result = '';
 
-	result += "* ".repeat(width);
-	result +="\n";
-	for (let i = 0; i < height - 2; i++) {
-		result += "* ";
-		result += "  ".repeat(width - 2);
-		result += "* ";
-		result +="\n";
-	}
+// 	result += "* ".repeat(width);
+// 	result +="\n";
+// 	for (let i = 0; i < height - 2; i++) {
+// 		result += "* ";
+// 		result += "  ".repeat(width - 2);
+// 		result += "* ";
+// 		result +="\n";
+// 	}
 
-	result += "* ".repeat(width);
-	result +="\n";
+// 	result += "* ".repeat(width);
+// 	result +="\n";
 
-	console.log(result);
-	return result;
-}
-createRect(10, 5); 
+// 	console.log(result);
+// 	return result;
+// }
+// createRect(10, 5); 
 
