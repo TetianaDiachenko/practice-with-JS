@@ -67,16 +67,16 @@
 // 		break;	
 // }
 // ===========Operators=================================================================
-console.log('arr' + " - object"); //arr - object (string)
-console.log(4 + +" - object"); // NaN
-console.log(4 + +"5"); // 9 (number)
+// console.log('arr' + " - object"); //arr - object (string)
+// console.log(4 + +" - object"); // NaN
+// console.log(4 + +"5"); // 9 (number)
 
 //+"5" - унарний +
 // ++ increment
 // -- decrement
 
-let incr = 10,
-	 decr = 10;
+// let incr = 10,
+// 	 decr = 10;
 
 // incr++;
 // decr--;
@@ -87,25 +87,25 @@ let incr = 10,
 // console.log(incr++); // 10
 // console.log(decr--); // 10
 
-console.log(++incr); // 11
-console.log(--decr); // 9
+// console.log(++incr); // 11
+// console.log(--decr); // 9
 
-console.log(5 % 2); // 1 залишок
+// console.log(5 % 2); // 1 залишок
 // = присвоєння
 // == порівнює значення - нестроге порівняння
 // === порівнює і значення і тип данних - строге порівняння
 
-console.log(2*4 == 8); // true
-console.log(2*4 === '8'); // false
+// console.log(2*4 == 8); // true
+// console.log(2*4 === '8'); // false
  
 // оператор заперечення ! - повертає зворотнє значення
-const isChecked = false,
-		isClose = false;
-console.log(isChecked || !isClose); // true
+// const isChecked = false,
+// 		isClose = false;
+// console.log(isChecked || !isClose); // true
 
 // Оператор нестрогий НЕ ДОРІВНЮЄ != і строгий !==
-console.log(2 + 2 * 2 != '6'); // false
-console.log(2 + 2 * 2 !== '6'); // true
+// console.log(2 + 2 * 2 != '6'); // false
+// console.log(2 + 2 * 2 !== '6'); // true
 
 
 // ===========Logical operators=========================================================
@@ -304,12 +304,12 @@ console.log(2 + 2 * 2 !== '6'); // true
 // 	console.log(i); // 1 2 3 4 5
 // }
 
-for (let i = 1; i < 10; i++) {
-	if (i === 6) {
-		continue;
-	}
-	console.log(i); // 1 2 3 4 5 7 8 9
-}
+// for (let i = 1; i < 10; i++) {
+// 	if (i === 6) {
+// 		continue;
+// 	}
+// 	console.log(i); // 1 2 3 4 5 7 8 9
+// }
 
 // Послідовність виконання циклів, від зовнішнього до внутрішього, який проходить до кінця
 // for (let i= 0; i < 3; i++) {
@@ -449,3 +449,59 @@ for (let i = 1; i < 10; i++) {
 // }
 // createRect(10, 5); 
 
+// Functions tasks
+
+function sayHello(name) {
+	return `Hello, ${name}!`;
+}
+console.log(sayHello('Nick'));
+
+function returnNeighboringNumbers(number) {
+	// const result = [];
+	// result[0] = --number;
+	// result[1] = ++number;
+	// result[2] = ++number;
+	// return result;
+	return [number - 1, number, number + 1];
+}
+console.log(returnNeighboringNumbers(5));
+
+// my variant
+function getMathResult(numb, prog) {
+	let result = '';
+	for (let i = 1; i <= prog; i++) {
+		if (i === prog) {
+			result += `${numb * i}`;
+		} else {
+			result += `${numb * i}---`;
+		}
+	}	
+	if (typeof(prog) !== 'number' || prog <= 0) {
+		return numb;
+	}
+
+	return result;
+}
+console.log(getMathResult(3, 10))
+
+//not my
+function getMathResult(num, times) {
+	if (typeof(times) !== 'number' || times <= 0) {
+		 return num;
+	}
+
+	let str = '';
+
+	for (let i = 1; i <= times; i++) {
+		 if (i === times) {
+			  str += `${num * i}`;
+		 } else {
+			  str += `${num * i}---`;
+			  // str = str + num * i + "---"
+		 }
+	}
+
+	return str;
+}
+
+getMathResult(10, 5);
