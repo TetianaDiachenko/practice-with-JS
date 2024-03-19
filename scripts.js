@@ -449,59 +449,109 @@
 // }
 // createRect(10, 5); 
 
+// ===========Functions=========================================================
+
+// Function declaration
+// Ств. до початку виконання скрипта, можна викликати перед оголошенням
+let num = 20;
+function showMessage(text) {
+	console.log(text);
+	num = 10	// here if let = 10; 
+}
+showMessage("Hello!"); // Hello!
+console.log(num); // 10; here 20
+
+function calc(a, b) {
+	return (a + b);
+	console.log('dfgf'); //Unreachable code detected. після return код не виконується	
+}
+console.log(calc(4, 3)); // 7
+console.log(calc(5, 6)); // 11
+console.log(calc(10, 6)); // 16
+
+function ret() {
+	let num = 50;
+	// .... може бути багато коду
+	return num;
+}
+const anotherNum = ret();
+console.log(anotherNum);  // 50
+
+// Function expression
+// Ств. лише тоді, коли доходить потік коду, можна викликати лише після оголошення
+
+const logger = function() {
+	console.log("Hello");
+};
+logger();
+
+// Arrow function - Стрілочна функція
+// Не має контексту виклику (this)
+
+const calc = (a, b) => { return a + b };
+// або
+const calc = (a, b) => a + b;
+// або
+const calc = a => a + b;
+// або
+const calc = (a, b) => { 
+	console.log('1');
+	return a + b 
+};
+
 // Functions tasks
 
-function sayHello(name) {
-	return `Hello, ${name}!`;
-}
-console.log(sayHello('Nick'));
+// function sayHello(name) {
+// 	return `Hello, ${name}!`;
+// }
+// console.log(sayHello('Nick'));
 
-function returnNeighboringNumbers(number) {
-	// const result = [];
-	// result[0] = --number;
-	// result[1] = ++number;
-	// result[2] = ++number;
-	// return result;
-	return [number - 1, number, number + 1];
-}
-console.log(returnNeighboringNumbers(5));
+// function returnNeighboringNumbers(number) {
+// 	// const result = [];
+// 	// result[0] = --number;
+// 	// result[1] = ++number;
+// 	// result[2] = ++number;
+// 	// return result;
+// 	return [number - 1, number, number + 1];
+// }
+// console.log(returnNeighboringNumbers(5));
 
-// my variant
-function getMathResult(numb, prog) {
-	let result = '';
-	for (let i = 1; i <= prog; i++) {
-		if (i === prog) {
-			result += `${numb * i}`;
-		} else {
-			result += `${numb * i}---`;
-		}
-	}	
-	if (typeof(prog) !== 'number' || prog <= 0) {
-		return numb;
-	}
+// // my variant
+// function getMathResult(numb, prog) {
+// 	let result = '';
+// 	for (let i = 1; i <= prog; i++) {
+// 		if (i === prog) {
+// 			result += `${numb * i}`;
+// 		} else {
+// 			result += `${numb * i}---`;
+// 		}
+// 	}	
+// 	if (typeof(prog) !== 'number' || prog <= 0) {
+// 		return numb;
+// 	}
 
-	return result;
-}
-console.log(getMathResult(3, 10))
+// 	return result;
+// }
+// console.log(getMathResult(3, 10))
 
-//not my
-function getMathResult(num, times) {
-	if (typeof(times) !== 'number' || times <= 0) {
-		 return num;
-	}
+// //not my
+// function getMathResult(num, times) {
+// 	if (typeof(times) !== 'number' || times <= 0) {
+// 		 return num;
+// 	}
 
-	let str = '';
+// 	let str = '';
 
-	for (let i = 1; i <= times; i++) {
-		 if (i === times) {
-			  str += `${num * i}`;
-		 } else {
-			  str += `${num * i}---`;
-			  // str = str + num * i + "---"
-		 }
-	}
+// 	for (let i = 1; i <= times; i++) {
+// 		 if (i === times) {
+// 			  str += `${num * i}`;
+// 		 } else {
+// 			  str += `${num * i}---`;
+// 			  // str = str + num * i + "---"
+// 		 }
+// 	}
 
-	return str;
-}
+// 	return str;
+// }
 
-getMathResult(10, 5);
+// getMathResult(10, 5);
