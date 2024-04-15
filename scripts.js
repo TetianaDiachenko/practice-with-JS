@@ -633,35 +633,43 @@ Calling the function getMathResult(5, 3) will give the answer 5---10---15 */
 // length - property of string
 // Methods: ToUpperCase(), toLowerCase() - returns new value
 
-const str = "test";
-const arr = [1, 2, 4];
+// const str = "test";
+// const arr = [1, 2, 4];
 
-console.log(str.length); // 4
-console.log(arr.length); // 3
-console.log(str[2]); // S
-console.log(str[2] = 'd'); // d
-console.log(str); // test - because we cannot do it like in arrays, we need methods
+// console.log(str.length); // 4
+// console.log(arr.length); // 3
+// console.log(str[2]); // S
+// console.log(str[2] = 'd'); // d
+// console.log(str); // test - because we cannot do it like in arrays, we need methods
 
-const str2 = "teSt";
-console.log(str2.toUpperCase()); // TEST
-console.log(str2.toLowerCase()); // test
-console.log(str2); // teSt
+// const str2 = "teSt";
+// console.log(str2.toUpperCase()); // TEST
+// console.log(str2.toLowerCase()); // test
+// console.log(str2); // teSt
 
-const fruit = "Some fruit";
-console.log(fruit.indexOf("fruit")); // 5
-console.log(fruit.indexOf("q")); // -1
+// const fruit = "Some fruit";
+// console.log(fruit.indexOf("fruit")); // 5
+// console.log(fruit.indexOf("q")); // -1
 
 // Methods (3), which change the string: slice(2, 3);, substring(2, 3),
 
-const logg = "Hello world";
-console.log(logg.slice(6, 11)); // world
-console.log(logg.slice(0, 5)); // Hello
-console.log(logg.slice(6)); // world
-console.log(logg.slice(-5, -1)); // worl
+// const logg = "Hello world";
+// console.log(logg.slice(6, 11)); // world
+// console.log(logg.slice(0, 5)); // Hello
+// console.log(logg.slice(6)); // world
+// console.log(logg.slice(-5, -1)); // worl
 
-console.log(logg.substring(6, 11)); // world 
-console.log(logg.substr(6, 5)); // world 
+// console.log(logg.substring(6, 11)); // world 
+// console.log(logg.substr(6, 5)); // world 
 
+// =========== Methods of Number==================================
+
+const num = 12.2;
+console.log(Math.round(num)); // 12 - round
+
+const test = "12.2px";
+console.log(parseInt(test)); // 12  - conver to the number
+console.log(parseFloat(test)); // 12.2 - convert to the number with .
 
 
 
