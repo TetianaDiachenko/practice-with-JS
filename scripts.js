@@ -453,51 +453,51 @@
 
 // Function declaration
 // Ств. до початку виконання скрипта, можна викликати перед оголошенням
-let num = 20;
-function showMessage(text) {
-	console.log(text);
-	num = 10	// here if let = 10; 
-}
-showMessage("Hello!"); // Hello!
-console.log(num); // 10; here 20
+// let num = 20;
+// function showMessage(text) {
+// 	console.log(text);
+// 	num = 10	// here if let = 10; 
+// }
+// showMessage("Hello!"); // Hello!
+// console.log(num); // 10; here 20
 
-function calc(a, b) {
-	return (a + b);
-	console.log('dfgf'); //Unreachable code detected. після return код не виконується	
-}
-console.log(calc(4, 3)); // 7
-console.log(calc(5, 6)); // 11
-console.log(calc(10, 6)); // 16
+// function calc(a, b) {
+// 	return (a + b);
+// 	console.log('dfgf'); //Unreachable code detected. після return код не виконується	
+// }
+// console.log(calc(4, 3)); // 7
+// console.log(calc(5, 6)); // 11
+// console.log(calc(10, 6)); // 16
 
-function ret() {
-	let num = 50;
-	// .... може бути багато коду
-	return num;
-}
-const anotherNum = ret();
-console.log(anotherNum);  // 50
+// function ret() {
+// 	let num = 50;
+// 	// .... може бути багато коду
+// 	return num;
+// }
+// const anotherNum = ret();
+// console.log(anotherNum);  // 50
 
-// Function expression
-// Ств. лише тоді, коли доходить потік коду, можна викликати лише після оголошення
+// // Function expression
+// // Ств. лише тоді, коли доходить потік коду, можна викликати лише після оголошення
 
-const logger = function() {
-	console.log("Hello");
-};
-logger();
+// const logger = function() {
+// 	console.log("Hello");
+// };
+// logger();
 
-// Arrow function - Стрілочна функція
-// Не має контексту виклику (this)
+// // Arrow function - Стрілочна функція
+// // Не має контексту виклику (this)
 
-const calc = (a, b) => { return a + b };
-// або
-const calc = (a, b) => a + b;
-// або
-const calc = a => a + b;
-// або
-const calc = (a, b) => { 
-	console.log('1');
-	return a + b 
-};
+// const calc = (a, b) => { return a + b };
+// // або
+// const calc = (a, b) => a + b;
+// // або
+// const calc = a => a + b;
+// // або
+// const calc = (a, b) => { 
+// 	console.log('1');
+// 	return a + b 
+// };
 
 // Functions tasks
 
@@ -517,6 +517,7 @@ const calc = (a, b) => {
 // console.log(returnNeighboringNumbers(5));
 
 // // my variant
+
 // function getMathResult(numb, prog) {
 // 	let result = '';
 // 	for (let i = 1; i <= prog; i++) {
@@ -535,12 +536,24 @@ const calc = (a, b) => {
 // console.log(getMathResult(3, 10))
 
 // //not my
+/* 3) Create a function that will accept 2 arguments, both numbers. The first number is the base, the second number is how many times it is necessary to repeat this number in the progression. (See example below). The function should return a string (or a number in special cases, which will be discussed below) where these numbers follow the order separated by three hyphens "---". There should be none after the last number.
+
+If the second argument is not a number, level or less than zero - then simply return the first argument. (We check using the typeof operator)
+
+Calling the function getMathResult(5, 3) will give the answer 5---10---15 */
+
 // function getMathResult(num, times) {
 // 	if (typeof(times) !== 'number' || times <= 0) {
 // 		 return num;
 // 	}
-
 // 	let str = '';
+
+// 	// Result with array
+// 	// let arr = [];
+// 	// for (let i = 1; i <= times; i++) {
+// 	// 	arr.push(num * i);		
+// 	// }
+// 	// return arr.join('---');
 
 // 	for (let i = 1; i <= times; i++) {
 // 		 if (i === times) {
@@ -548,10 +561,36 @@ const calc = (a, b) => {
 // 		 } else {
 // 			  str += `${num * i}---`;
 // 			  // str = str + num * i + "---"
-// 		 }
-// 	}
-
+// 		 }	
+// 	}	
 // 	return str;
 // }
+// console.log(getMathResult(10, 5)); // 10---20---30---40---50
 
-// getMathResult(10, 5);
+// Arguments in functions
+
+// function convert(amount) {
+// 	console.log(28 * amount);
+// }
+
+// convert(500); // 14000 // Use 1 argument
+
+// Use more arguments to make the function universal
+
+// const usdCurr = 28;
+
+// function convert(amount, curr) {
+// 	console.log(curr * amount);
+// }
+ 
+// convert(500, usdCurr); // 14000
+
+const usdCurr = 28;
+const eurCurr = 32;
+
+function convert(amount, curr) {
+	console.log(curr * amount);
+}
+ 
+convert(500, usdCurr); // 14000
+convert(500, eurCurr); // 16000
