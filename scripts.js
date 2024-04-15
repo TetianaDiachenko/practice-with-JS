@@ -585,12 +585,44 @@ Calling the function getMathResult(5, 3) will give the answer 5---10---15 */
  
 // convert(500, usdCurr); // 14000
 
+// const usdCurr = 28;
+// const eurCurr = 32;
+
+// function convert(amount, curr) {
+// 	console.log(curr * amount);
+// }
+ 
+// convert(500, usdCurr); // 14000
+// convert(500, eurCurr); // 16000
+
+// Return in functions
+
 const usdCurr = 28;
-const eurCurr = 32;
+const discount = 0.9;
 
 function convert(amount, curr) {
-	console.log(curr * amount);
+	return curr * amount;
 }
- 
-convert(500, usdCurr); // 14000
-convert(500, eurCurr); // 16000
+
+function promotion(result) {
+	console.log(result * discount);	
+} 
+const res = convert(500, usdCurr);
+
+promotion(res); // 12600
+
+//Can end the function action with word return
+
+function test() {
+	for(let i = 0; i < 5; i++) {
+		console.log(i);
+		if (i === 3) return	
+	}
+	console.log('Done');	
+}
+test(); // 0 1 2 3
+
+//Every function returns smth, so if nothing return it returns undefined
+
+function doNothing() {};
+console.log( doNothing() === undefined); // true
