@@ -597,32 +597,71 @@ Calling the function getMathResult(5, 3) will give the answer 5---10---15 */
 
 // Return in functions
 
-const usdCurr = 28;
-const discount = 0.9;
+// const usdCurr = 28;
+// const discount = 0.9;
 
-function convert(amount, curr) {
-	return curr * amount;
-}
+// function convert(amount, curr) {
+// 	return curr * amount;
+// }
 
-function promotion(result) {
-	console.log(result * discount);	
-} 
-const res = convert(500, usdCurr);
+// function promotion(result) {
+// 	console.log(result * discount);	
+// } 
+// const res = convert(500, usdCurr);
 
-promotion(res); // 12600
+// promotion(res); // 12600
 
 //Can end the function action with word return
 
-function test() {
-	for(let i = 0; i < 5; i++) {
-		console.log(i);
-		if (i === 3) return	
-	}
-	console.log('Done');	
-}
-test(); // 0 1 2 3
+// function test() {
+// 	for(let i = 0; i < 5; i++) {
+// 		console.log(i);
+// 		if (i === 3) return	
+// 	}
+// 	console.log('Done');	
+// }
+// test(); // 0 1 2 3
 
 //Every function returns smth, so if nothing return it returns undefined
 
-function doNothing() {};
-console.log( doNothing() === undefined); // true
+// function doNothing() {};
+// console.log( doNothing() === undefined); // true
+
+
+// =========== Methods and properties of string==================================
+
+// length - property of string
+// Methods: ToUpperCase(), toLowerCase() - returns new value
+
+const str = "test";
+const arr = [1, 2, 4];
+
+console.log(str.length); // 4
+console.log(arr.length); // 3
+console.log(str[2]); // S
+console.log(str[2] = 'd'); // d
+console.log(str); // test - because we cannot do it like in arrays, we need methods
+
+const str2 = "teSt";
+console.log(str2.toUpperCase()); // TEST
+console.log(str2.toLowerCase()); // test
+console.log(str2); // teSt
+
+const fruit = "Some fruit";
+console.log(fruit.indexOf("fruit")); // 5
+console.log(fruit.indexOf("q")); // -1
+
+// Methods (3), which change the string: slice(2, 3);, substring(2, 3),
+
+const logg = "Hello world";
+console.log(logg.slice(6, 11)); // world
+console.log(logg.slice(0, 5)); // Hello
+console.log(logg.slice(6)); // world
+console.log(logg.slice(-5, -1)); // worl
+
+console.log(logg.substring(6, 11)); // world 
+console.log(logg.substr(6, 5)); // world 
+
+
+
+
