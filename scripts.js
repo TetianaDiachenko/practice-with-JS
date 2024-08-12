@@ -689,5 +689,51 @@ console.log(getCubeVolumeAndAria(15.5)); // An error occurred during calculation
 console.log(getCubeVolumeAndAria('15')); // An error occurred during calculation
 console.log(getCubeVolumeAndAria(-15)); // An error occurred during calculation
 
+// =========== Function getCoupeNumber ===================
 
+function getCoupeNumber(seat) {
+	
+	if (!Number.isInteger(seat) || seat < 0) {
+		return 'Error. Please check if the seat number you entered is correct';
+	}
+	if (seat === 0 || seat > 36) {
+		return 'There are no such seats in the carriage'
+	}
+	if (seat >= 1 && seat <= 4) {
+		return 1;
+	};
+	if (seat >= 5 && seat <= 8) {
+		return 2;
+	};
+	if (seat >= 9 && seat <= 12) {
+		return 3;
+	};
+	if (seat >= 13 && seat <= 16) {
+		return 4;
+	};
+	if (seat >= 17 && seat <= 20) {
+		return 5;
+	};
+	if (seat >= 21 && seat <= 24) {
+		return 6;
+	};
+	if (seat >= 25 && seat <= 28) {
+		return 7;
+	};
+	if (seat >= 29 && seat <= 32) {
+		return 8;
+	};
+	if (seat >= 33 && seat <= 36) {
+		return 9;
+	};
+
+};
+
+console.log(getCoupeNumber(33)); // 9
+console.log(getCoupeNumber(7)); // 2
+console.log(getCoupeNumber(300)); // There are no such seats in the carriage
+console.log(getCoupeNumber(0)); // There are no such seats in the carriage
+console.log(getCoupeNumber(7.7)); // Error. Please check if the seat number you entered is correct
+console.log(getCoupeNumber(-10)); // Error. Please check if the seat number you entered is correct
+console.log(getCoupeNumber('Hello')); // Error. Please check if the seat number you entered is correct
 
