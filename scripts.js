@@ -664,12 +664,30 @@ Calling the function getMathResult(5, 3) will give the answer 5---10---15 */
 
 // =========== Methods of Number==================================
 
-const num = 12.2;
-console.log(Math.round(num)); // 12 - round
+// const num = 12.2;
+// console.log(Math.round(num)); // 12 - round
 
-const test = "12.2px";
-console.log(parseInt(test)); // 12  - conver to the number
-console.log(parseFloat(test)); // 12.2 - convert to the number with .
+// const test = "12.2px";
+// console.log(parseInt(test)); // 12  - conver to the number
+// console.log(parseFloat(test)); // 12.2 - convert to the number with .
+
+// =========== Function calculate Volume And Area of Cube ===================
+
+function getCubeVolumeAndAria(side) {
+   const cubeVolume = side * side * side;
+   const cubeAria = 6 * (side * side);
+
+   if (Number.isInteger(side) && side >= 0){
+       return `Volume of the cube: ${cubeVolume}, Aria of the cube: ${cubeAria}`;
+      } else {
+      return `An error occurred during calculation`;
+	};
+};
+console.log(getCubeVolumeAndAria(5)); // Volume of the cube: 125, Aria of the cube: 150
+console.log(getCubeVolumeAndAria(15)); // Volume of the cube: 3375, Aria of the cube: 1350
+console.log(getCubeVolumeAndAria(15.5)); // An error occurred during calculation
+console.log(getCubeVolumeAndAria('15')); // An error occurred during calculation
+console.log(getCubeVolumeAndAria(-15)); // An error occurred during calculation
 
 
 
