@@ -674,7 +674,7 @@ Calling the function getMathResult(5, 3) will give the answer 5---10---15 */
 // =========== Function calculate Volume And Area of Cube ===================
 
 function getCubeVolumeAndAria(side) {
-   const cubeVolume = side * side * side;
+   const cubeVolume = side * side * side; 
    const cubeAria = 6 * (side * side);
 
    if (Number.isInteger(side) && side >= 0){
@@ -692,41 +692,43 @@ console.log(getCubeVolumeAndAria(-15)); // An error occurred during calculation
 // =========== Function getCoupeNumber ===================
 
 function getCoupeNumber(seat) {
-	
+
 	if (!Number.isInteger(seat) || seat < 0) {
 		return 'Error. Please check if the seat number you entered is correct';
 	}
 	if (seat === 0 || seat > 36) {
 		return 'There are no such seats in the carriage'
 	}
-	if (seat >= 1 && seat <= 4) {
-		return 1;
-	};
-	if (seat >= 5 && seat <= 8) {
-		return 2;
-	};
-	if (seat >= 9 && seat <= 12) {
-		return 3;
-	};
-	if (seat >= 13 && seat <= 16) {
-		return 4;
-	};
-	if (seat >= 17 && seat <= 20) {
-		return 5;
-	};
-	if (seat >= 21 && seat <= 24) {
-		return 6;
-	};
-	if (seat >= 25 && seat <= 28) {
-		return 7;
-	};
-	if (seat >= 29 && seat <= 32) {
-		return 8;
-	};
-	if (seat >= 33 && seat <= 36) {
-		return 9;
-	};
+	// if (seat >= 1 && seat <= 4) {
+	// 	return 1;
+	// };
+	// if (seat >= 5 && seat <= 8) {
+	// 	return 2;
+	// };
+	// if (seat >= 9 && seat <= 12) {
+	// 	return 3;
+	// };
+	// if (seat >= 13 && seat <= 16) {
+	// 	return 4;
+	// };
+	// if (seat >= 17 && seat <= 20) {
+	// 	return 5;
+	// };
+	// if (seat >= 21 && seat <= 24) {
+	// 	return 6;
+	// };
+	// if (seat >= 25 && seat <= 28) {
+	// 	return 7;
+	// };
+	// if (seat >= 29 && seat <= 32) {
+	// 	return 8;
+	// };
+	// if (seat >= 33 && seat <= 36) {
+	// 	return 9;
+	// };
 
+ 	// return Math.ceil(seat / 4)
+	 return Math.floor(seat / 4) + 1;
 };
 
 console.log(getCoupeNumber(33)); // 9
