@@ -759,3 +759,28 @@ console.log(getTimeFromMinutes(50)); // It's 0 hours and 50 minutes.
 console.log(getTimeFromMinutes(0)); // It's 0 hours and 0 minutes.
 console.log(getTimeFromMinutes(-150)); // Error, check the data
 console.log(getTimeFromMinutes(700)); // Error, check the data
+
+
+// ========================= Function findMaxNumber =====================
+
+/* Write a function that takes 4 numbers and returns the largest of them. 
+If one of the arguments is not a number or 
+there are less than 4 of them, 0 is returned. 
+Fractional numbers are allowed.*/
+
+function findMaxNumber(firstNum, secondNum, thirdNum, fourthNum) {
+	if ( typeof(firstNum) !== 'number' || 
+			typeof(secondNum) !== 'number' ||
+			typeof(thirdNum) !== 'number' ||
+			typeof(fourthNum) !== 'number' ||
+			arguments.length !== 4
+	) {
+		return 0;
+	} else {
+		return Math.max(firstNum, secondNum, thirdNum, fourthNum)
+	}
+}
+
+console.log(findMaxNumber(1, 5, 6.6, 11)); // 11
+console.log(findMaxNumber(1, 5, 6.6, 11, 12)); // 0
+console.log(findMaxNumber(1, 5, '6', '10')); // 0
