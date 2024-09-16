@@ -673,69 +673,89 @@ Calling the function getMathResult(5, 3) will give the answer 5---10---15 */
 
 // =========== Function calculate Volume And Area of Cube ===================
 
-function getCubeVolumeAndAria(side) {
-   const cubeVolume = side * side * side; 
-   const cubeAria = 6 * (side * side);
+// function getCubeVolumeAndAria(side) {
+//    const cubeVolume = side * side * side; 
+//    const cubeAria = 6 * (side * side);
 
-   if (Number.isInteger(side) && side >= 0){
-       return `Volume of the cube: ${cubeVolume}, Aria of the cube: ${cubeAria}`;
-      } else {
-      return `An error occurred during calculation`;
-	};
-};
-console.log(getCubeVolumeAndAria(5)); // Volume of the cube: 125, Aria of the cube: 150
-console.log(getCubeVolumeAndAria(15)); // Volume of the cube: 3375, Aria of the cube: 1350
-console.log(getCubeVolumeAndAria(15.5)); // An error occurred during calculation
-console.log(getCubeVolumeAndAria('15')); // An error occurred during calculation
-console.log(getCubeVolumeAndAria(-15)); // An error occurred during calculation
+//    if (Number.isInteger(side) && side >= 0){
+//        return `Volume of the cube: ${cubeVolume}, Aria of the cube: ${cubeAria}`;
+//       } else {
+//       return `An error occurred during calculation`;
+// 	};
+// };
+// console.log(getCubeVolumeAndAria(5)); // Volume of the cube: 125, Aria of the cube: 150
+// console.log(getCubeVolumeAndAria(15)); // Volume of the cube: 3375, Aria of the cube: 1350
+// console.log(getCubeVolumeAndAria(15.5)); // An error occurred during calculation
+// console.log(getCubeVolumeAndAria('15')); // An error occurred during calculation
+// console.log(getCubeVolumeAndAria(-15)); // An error occurred during calculation
 
-// =========== Function getCoupeNumber ===================
+// // =========== Function getCoupeNumber ===================
 
-function getCoupeNumber(seat) {
+// function getCoupeNumber(seat) {
 
-	if (!Number.isInteger(seat) || seat < 0) {
-		return 'Error. Please check if the seat number you entered is correct';
+// 	if (!Number.isInteger(seat) || seat < 0) {
+// 		return 'Error. Please check if the seat number you entered is correct';
+// 	}
+// 	if (seat === 0 || seat > 36) {
+// 		return 'There are no such seats in the carriage'
+// 	}
+// 	// if (seat >= 1 && seat <= 4) {
+// 	// 	return 1;
+// 	// };
+// 	// if (seat >= 5 && seat <= 8) {
+// 	// 	return 2;
+// 	// };
+// 	// if (seat >= 9 && seat <= 12) {
+// 	// 	return 3;
+// 	// };
+// 	// if (seat >= 13 && seat <= 16) {
+// 	// 	return 4;
+// 	// };
+// 	// if (seat >= 17 && seat <= 20) {
+// 	// 	return 5;
+// 	// };
+// 	// if (seat >= 21 && seat <= 24) {
+// 	// 	return 6;
+// 	// };
+// 	// if (seat >= 25 && seat <= 28) {
+// 	// 	return 7;
+// 	// };
+// 	// if (seat >= 29 && seat <= 32) {
+// 	// 	return 8;
+// 	// };
+// 	// if (seat >= 33 && seat <= 36) {
+// 	// 	return 9;
+// 	// };
+
+//  	// return Math.ceil(seat / 4)
+// 	 return Math.floor(seat / 4) + 1;
+// };
+
+// console.log(getCoupeNumber(33)); // 9
+// console.log(getCoupeNumber(7)); // 2
+// console.log(getCoupeNumber(300)); // There are no such seats in the carriage
+// console.log(getCoupeNumber(0)); // There are no such seats in the carriage
+// console.log(getCoupeNumber(7.7)); // Error. Please check if the seat number you entered is correct
+// console.log(getCoupeNumber(-10)); // Error. Please check if the seat number you entered is correct
+// console.log(getCoupeNumber('Hello')); // Error. Please check if the seat number you entered is correct
+
+// =========== Function of minutes ===================
+/* Create a function that takes an integer number of minutes 
+and returns the time in the desired string format.*/
+
+function getTimeFromMinutes(minutes) {
+	
+	if (!Number.isInteger(minutes) || minutes < 0 || minutes > 600) {
+		return 'Error, check the data';
+	} else {
+		let hours = Math.floor(minutes / 60);
+		let remainingMinutes = minutes % 60; 
+		return `It's ${hours} hours and ${remainingMinutes} minutes.`
 	}
-	if (seat === 0 || seat > 36) {
-		return 'There are no such seats in the carriage'
-	}
-	// if (seat >= 1 && seat <= 4) {
-	// 	return 1;
-	// };
-	// if (seat >= 5 && seat <= 8) {
-	// 	return 2;
-	// };
-	// if (seat >= 9 && seat <= 12) {
-	// 	return 3;
-	// };
-	// if (seat >= 13 && seat <= 16) {
-	// 	return 4;
-	// };
-	// if (seat >= 17 && seat <= 20) {
-	// 	return 5;
-	// };
-	// if (seat >= 21 && seat <= 24) {
-	// 	return 6;
-	// };
-	// if (seat >= 25 && seat <= 28) {
-	// 	return 7;
-	// };
-	// if (seat >= 29 && seat <= 32) {
-	// 	return 8;
-	// };
-	// if (seat >= 33 && seat <= 36) {
-	// 	return 9;
-	// };
+}
 
- 	// return Math.ceil(seat / 4)
-	 return Math.floor(seat / 4) + 1;
-};
-
-console.log(getCoupeNumber(33)); // 9
-console.log(getCoupeNumber(7)); // 2
-console.log(getCoupeNumber(300)); // There are no such seats in the carriage
-console.log(getCoupeNumber(0)); // There are no such seats in the carriage
-console.log(getCoupeNumber(7.7)); // Error. Please check if the seat number you entered is correct
-console.log(getCoupeNumber(-10)); // Error. Please check if the seat number you entered is correct
-console.log(getCoupeNumber('Hello')); // Error. Please check if the seat number you entered is correct
-
+console.log(getTimeFromMinutes(150)); // It's 2 hours and 30 minutes.
+console.log(getTimeFromMinutes(50)); // It's 0 hours and 50 minutes.
+console.log(getTimeFromMinutes(0)); // It's 0 hours and 0 minutes.
+console.log(getTimeFromMinutes(-150)); // Error, check the data
+console.log(getTimeFromMinutes(700)); // Error, check the data
