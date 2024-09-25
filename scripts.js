@@ -743,44 +743,71 @@ Calling the function getMathResult(5, 3) will give the answer 5---10---15 */
 /* Create a function that takes an integer number of minutes 
 and returns the time in the desired string format.*/
 
-function getTimeFromMinutes(minutes) {
+// function getTimeFromMinutes(minutes) {
 	
-	if (!Number.isInteger(minutes) || minutes < 0 || minutes > 600) {
-		return 'Error, check the data';
+// 	if (!Number.isInteger(minutes) || minutes < 0 || minutes > 600) {
+// 		return 'Error, check the data';
+// 	} else {
+// 		let hours = Math.floor(minutes / 60);
+// 		let remainingMinutes = minutes % 60; 
+// 		return `It's ${hours} hours and ${remainingMinutes} minutes.`
+// 	}
+// }
+
+// console.log(getTimeFromMinutes(150)); // It's 2 hours and 30 minutes.
+// console.log(getTimeFromMinutes(50)); // It's 0 hours and 50 minutes.
+// console.log(getTimeFromMinutes(0)); // It's 0 hours and 0 minutes.
+// console.log(getTimeFromMinutes(-150)); // Error, check the data
+// console.log(getTimeFromMinutes(700)); // Error, check the data
+
+
+// // ========================= Function findMaxNumber =====================
+
+// /* Write a function that takes 4 numbers and returns the largest of them. 
+// If one of the arguments is not a number or 
+// there are less than 4 of them, 0 is returned. 
+// Fractional numbers are allowed.*/
+
+// function findMaxNumber(firstNum, secondNum, thirdNum, fourthNum) {
+// 	if ( typeof(firstNum) !== 'number' || 
+// 			typeof(secondNum) !== 'number' ||
+// 			typeof(thirdNum) !== 'number' ||
+// 			typeof(fourthNum) !== 'number' ||
+// 			arguments.length !== 4
+// 	) {
+// 		return 0;
+// 	} else {
+// 		return Math.max(firstNum, secondNum, thirdNum, fourthNum)
+// 	}
+// }
+
+// console.log(findMaxNumber(1, 5, 6.6, 11)); // 11
+// console.log(findMaxNumber(1, 5, 6.6, 11, 12)); // 0
+// console.log(findMaxNumber(1, 5, '6', '10')); // 0
+
+// =========== Function of Fibonacci without recursion ===================
+
+function fib(num) {
+	if (!Number.isInteger(num) || typeof(num) !== 'number' || num < 0) {
+		return '';
 	} else {
-		let hours = Math.floor(minutes / 60);
-		let remainingMinutes = minutes % 60; 
-		return `It's ${hours} hours and ${remainingMinutes} minutes.`
+		let str = [];
+		let a = 0;
+		let b = 1;
+		let next;
+
+		for (let i = 0; i < num; i++) {
+			str.push(a);
+			next = a + b;
+			a = b;
+			b = next;
+		}
+		return str.join (' ')
 	}
 }
 
-console.log(getTimeFromMinutes(150)); // It's 2 hours and 30 minutes.
-console.log(getTimeFromMinutes(50)); // It's 0 hours and 50 minutes.
-console.log(getTimeFromMinutes(0)); // It's 0 hours and 0 minutes.
-console.log(getTimeFromMinutes(-150)); // Error, check the data
-console.log(getTimeFromMinutes(700)); // Error, check the data
-
-
-// ========================= Function findMaxNumber =====================
-
-/* Write a function that takes 4 numbers and returns the largest of them. 
-If one of the arguments is not a number or 
-there are less than 4 of them, 0 is returned. 
-Fractional numbers are allowed.*/
-
-function findMaxNumber(firstNum, secondNum, thirdNum, fourthNum) {
-	if ( typeof(firstNum) !== 'number' || 
-			typeof(secondNum) !== 'number' ||
-			typeof(thirdNum) !== 'number' ||
-			typeof(fourthNum) !== 'number' ||
-			arguments.length !== 4
-	) {
-		return 0;
-	} else {
-		return Math.max(firstNum, secondNum, thirdNum, fourthNum)
-	}
-}
-
-console.log(findMaxNumber(1, 5, 6.6, 11)); // 11
-console.log(findMaxNumber(1, 5, 6.6, 11, 12)); // 0
-console.log(findMaxNumber(1, 5, '6', '10')); // 0
+console.log (fib(4)); // 0 1 1 2
+console.log (fib(7)); // 0 1 1 2 3 5 8
+console.log (fib('7')); // ''
+console.log (fib(1)); // 0
+console.log (fib(0)); // ''
