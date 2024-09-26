@@ -787,27 +787,70 @@ and returns the time in the desired string format.*/
 
 // =========== Function of Fibonacci without recursion ===================
 
-function fib(num) {
-	if (!Number.isInteger(num) || typeof(num) !== 'number' || num < 0) {
-		return '';
-	} else {
-		let str = [];
-		let a = 0;
-		let b = 1;
-		let next;
+// function fib(num) {
+// 	if (!Number.isInteger(num) || typeof(num) !== 'number' || num < 0) {
+// 		return '';
+// 	} else {
+// 		let str = [];
+// 		let a = 0;
+// 		let b = 1;
+// 		let next;
 
-		for (let i = 0; i < num; i++) {
-			str.push(a);
-			next = a + b;
-			a = b;
-			b = next;
-		}
-		return str.join (' ')
-	}
+// 		for (let i = 0; i < num; i++) {
+// 			str.push(a);
+// 			next = a + b;
+// 			a = b;
+// 			b = next;
+// 		}
+// 		return str.join (' ')
+// 	}
+// }
+
+// console.log (fib(4)); // 0 1 1 2
+// console.log (fib(7)); // 0 1 1 2 3 5 8
+// console.log (fib('7')); // ''
+// console.log (fib(1)); // 0
+// console.log (fib(0)); // ''
+
+// =========== Callback Function===================
+
+/* If don't use callback function, 
+different functions can be done in different time, for ex.: */
+
+function first() {
+	// do smth
+	setTimeout(function() {
+		console.log(1);
+	}, 500);
 }
 
-console.log (fib(4)); // 0 1 1 2
-console.log (fib(7)); // 0 1 1 2 3 5 8
-console.log (fib('7')); // ''
-console.log (fib(1)); // 0
-console.log (fib(0)); // ''
+function second() {
+	console.log(2);
+}
+
+first(); 
+second(); 
+
+// 2 
+// 1
+
+/* If we use callback function, 
+it'll be done exactly after 
+our previous function was done*/
+
+function learnJS(lang, callback) {
+	console.log(`I learn ${lang}`);
+	callback();
+}
+
+// the direct way to use callback function
+// learnJS('JavaScript', function() {
+// 	console.log(`I've learned the first lesson`);	
+// })
+
+// the separate way to use callback function
+function done() {
+	console.log(`I've learned the first lesson`);
+}
+
+learnJS('JavaScript', done);
