@@ -916,6 +916,21 @@ because it return an Array and it has property LENGTH
 */
 
 
+// const options = {
+// 	name: 'test',
+// 	width: 1024,
+// 	height: 1024,
+// 	colors: {
+// 		border: 'black',
+// 		bg: 'red',
+// 	}
+// };
+
+// console.log(Object.keys(options)); // [ 'name', 'width', 'height', 'colors' ]
+// console.log(Object.keys(options).length); // 4
+
+// Create methods in Object
+
 const options = {
 	name: 'test',
 	width: 1024,
@@ -923,9 +938,11 @@ const options = {
 	colors: {
 		border: 'black',
 		bg: 'red',
+	},
+	makeTest: function() {
+		console.log('Test');
 	}
 };
 
-console.log(Object.keys(options)); // [ 'name', 'width', 'height', 'colors' ]
-console.log(Object.keys(options).length); // 4
+options.makeTest(); // Test (Run method makeTest)
 
