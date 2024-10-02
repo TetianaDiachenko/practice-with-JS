@@ -946,3 +946,7 @@ const options = {
 
 options.makeTest(); // Test (Run method makeTest)
 
+// Destructuring in Object
+
+const {border, bg} = options.colors;
+console.log(border); // black
