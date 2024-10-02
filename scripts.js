@@ -817,19 +817,19 @@ and returns the time in the desired string format.*/
 /* If don't use callback function, 
 different functions can be done in different time, for ex.: */
 
-function first() {
-	// do smth
-	setTimeout(function() {
-		console.log(1);
-	}, 500);
-}
+// function first() {
+// 	// do smth
+// 	setTimeout(function() {
+// 		console.log(1);
+// 	}, 500);
+// }
 
-function second() {
-	console.log(2);
-}
+// function second() {
+// 	console.log(2);
+// }
 
-first(); 
-second(); 
+// first(); 
+// second(); 
 
 // 2 
 // 1
@@ -838,19 +838,65 @@ second();
 it'll be done exactly after 
 our previous function was done*/
 
-function learnJS(lang, callback) {
-	console.log(`I learn ${lang}`);
-	callback();
+// function learnJS(lang, callback) {
+// 	console.log(`I learn ${lang}`);
+// 	callback();
+// }
+
+// // the direct way to use callback function
+// // learnJS('JavaScript', function() {
+// // 	console.log(`I've learned the first lesson`);	
+// // })
+
+// // the separate way to use callback function
+// function done() {
+// 	console.log(`I've learned the first lesson`);
+// }
+
+// learnJS('JavaScript', done);
+
+// ============================== Objects ======================================
+
+const options = {
+	name: 'test',
+	width: 1024,
+	height: 1024,
+	colors: {
+		border: 'black',
+		bg: 'red',
+	}
+};
+
+// console.log(options.name); // test
+// console.log(options['colors']['border']); //black
+
+// delete options.name;
+
+// console.log(options); // { width: 1024, height: 1024, colors: { border: 'black', bg: 'red' } }
+
+// To iterate through the properties of an object use FOR ... IN
+
+// for (let key in options) {
+// 	console.log(`Property ${key} has a meaning ${options[key]}`); 
+// }
+/* Property name has a meaning test
+Property width has a meaning 1024
+Property height has a meaning 1024
+Property colors has a meaning [object Object]*/
+
+for (let key in options) {
+	if (typeof(options[key]) === 'object') {
+		for (let i in options[key]) {
+				console.log(`Property ${i} has a meaning ${options[key][i]}`); 
+		}
+	} else {
+			console.log(`Property ${key} has a meaning ${options[key]}`); 
+	}
 }
 
-// the direct way to use callback function
-// learnJS('JavaScript', function() {
-// 	console.log(`I've learned the first lesson`);	
-// })
+/* Property name has a meaning test
+Property width has a meaning 1024
+Property height has a meaning 1024
+Property border has a meaning black
+Property bg has a meaning red*/
 
-// the separate way to use callback function
-function done() {
-	console.log(`I've learned the first lesson`);
-}
-
-learnJS('JavaScript', done);
