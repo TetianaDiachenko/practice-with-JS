@@ -884,19 +884,26 @@ Property width has a meaning 1024
 Property height has a meaning 1024
 Property colors has a meaning [object Object]*/
 
+// for (let key in options) {
+// 	if (typeof(options[key]) === 'object') {
+// 		for (let i in options[key]) {
+// 				console.log(`Property ${i} has a meaning ${options[key][i]}`); 
+// 		}
+// 	} else {
+// 			console.log(`Property ${key} has a meaning ${options[key]}`); 
+// 	}
+// }
+
+// /* Property name has a meaning test
+// Property width has a meaning 1024
+// Property height has a meaning 1024
+// Property border has a meaning black
+// Property bg has a meaning red*/
+
+// Counter in Object to know the length of its properties
+
+let counter = 0;
 for (let key in options) {
-	if (typeof(options[key]) === 'object') {
-		for (let i in options[key]) {
-				console.log(`Property ${i} has a meaning ${options[key][i]}`); 
-		}
-	} else {
-			console.log(`Property ${key} has a meaning ${options[key]}`); 
-	}
+	counter++;
 }
-
-/* Property name has a meaning test
-Property width has a meaning 1024
-Property height has a meaning 1024
-Property border has a meaning black
-Property bg has a meaning red*/
-
+console.log(counter); // 4
