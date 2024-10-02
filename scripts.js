@@ -857,15 +857,15 @@ our previous function was done*/
 
 // ============================== Objects ======================================
 
-const options = {
-	name: 'test',
-	width: 1024,
-	height: 1024,
-	colors: {
-		border: 'black',
-		bg: 'red',
-	}
-};
+// const options = {
+// 	name: 'test',
+// 	width: 1024,
+// 	height: 1024,
+// 	colors: {
+// 		border: 'black',
+// 		bg: 'red',
+// 	}
+// };
 
 // console.log(options.name); // test
 // console.log(options['colors']['border']); //black
@@ -900,10 +900,32 @@ Property colors has a meaning [object Object]*/
 // Property border has a meaning black
 // Property bg has a meaning red*/
 
-// Counter in Object to know the length of its properties
+// // Counter in Object to know the length of its properties
 
-let counter = 0;
-for (let key in options) {
-	counter++;
-}
-console.log(counter); // 4
+// let counter = 0;
+// for (let key in options) {
+// 	counter++;
+// }
+// console.log(counter); // 4
+
+// ======================= Methods in Object ================================
+
+/* if we want to know the length of object 
+we can use method Object.keys()
+because it return an Array and it has property LENGTH
+*/
+
+
+const options = {
+	name: 'test',
+	width: 1024,
+	height: 1024,
+	colors: {
+		border: 'black',
+		bg: 'red',
+	}
+};
+
+console.log(Object.keys(options)); // [ 'name', 'width', 'height', 'colors' ]
+console.log(Object.keys(options).length); // 4
+
