@@ -931,22 +931,69 @@ because it return an Array and it has property LENGTH
 
 // Create methods in Object
 
-const options = {
-	name: 'test',
-	width: 1024,
-	height: 1024,
-	colors: {
-		border: 'black',
-		bg: 'red',
+// const options = {
+// 	name: 'test',
+// 	width: 1024,
+// 	height: 1024,
+// 	colors: {
+// 		border: 'black',
+// 		bg: 'red',
+// 	},
+// 	makeTest: function() {
+// 		console.log('Test');
+// 	}
+// };
+
+// options.makeTest(); // Test (Run method makeTest)
+
+// // Destructuring in Object
+
+// const {border, bg} = options.colors;
+// console.log(border); // black
+
+// ======================= Tasks for working with objects ============================
+
+const personalPlanPeter = {
+	name: "Peter",
+	age: "29",
+	skills: {
+		 languages: ['ukr', 'eng'],
+		 programmingLangs: {
+			  js: '20%',
+			  php: '10%'
+		 },
+		 exp: '1 month'
 	},
-	makeTest: function() {
-		console.log('Test');
+	// Create a new method that takes an object as an argument and returns a string in the required format.
+	showAgeAndLangs: function(plan) {
+		const lang = plan.skills.languages.map(language => language.toUpperCase()).join(' ');
+		return `I am ${plan.age} and I speak languages: ${lang}`
 	}
+	
 };
 
-options.makeTest(); // Test (Run method makeTest)
+// A function that takes an object with all the data and returns a string with the experience.
 
-// Destructuring in Object
+function showExperience(plan) {
+		// const expect = personalPlanPeter['skills']['exp'];
+			// return expect;
+	const {exp} = plan.skills;
+ 		return exp;
+}
 
-const {border, bg} = options.colors;
-console.log(border); // black
+//A function that takes an object with all the data and returns a string in the required format.
+
+function showProgrammingLangs(plan) {
+	const { programmingLangs } = plan.skills;
+	let result = '';
+	
+	for (let lang in programmingLangs) {
+		 result += `The ${lang} language is studied by ${programmingLangs[lang]}\n`;
+	}
+	return result;
+
+}
+
+console.log(showExperience(personalPlanPeter));  // 1 month
+console.log(showProgrammingLangs(personalPlanPeter)); // The js language is studied by 20% The php language is studied by 10%
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter)); // I am 29 and I speak languages: UKR ENG
