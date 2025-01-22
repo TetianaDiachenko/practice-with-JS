@@ -997,3 +997,30 @@ because it return an Array and it has property LENGTH
 // console.log(showExperience(personalPlanPeter));  // 1 month
 // console.log(showProgrammingLangs(personalPlanPeter)); // The js language is studied by 20% The php language is studied by 10%
 // console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter)); // I am 29 and I speak languages: UKR ENG
+
+// ======================= Arrays Methods ============================
+
+//Methods that change the array
+const arr = [1, 2, 3, 6, 8];
+// Delete the last element in array
+arr.pop(); 
+console.log(arr); // [ 1, 2, 3, 6 ] 
+
+// Add the last element to array
+arr.push(10);
+console.log(arr); // [ 1, 2, 3, 6, 8, 10 ]
+
+//Delete/add the first element in array = shift / ushift 
+// but rearly use because they change indexes of all elements in array
+arr.shift(); // [ 2, 3, 6, 10 ]
+console.log(arr); 
+
+arr.unshift(0); // [ 0, 2, 3, 6, 10 ]
+console.log(arr);  
+
+/* 
+[ 1, 2, 3, 6 ]
+[ 1, 2, 3, 6, 10 ]
+[ 2, 3, 6, 10 ]
+[ 0, 2, 3, 6, 10 ]
+ */
