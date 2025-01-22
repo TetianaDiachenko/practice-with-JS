@@ -953,47 +953,47 @@ because it return an Array and it has property LENGTH
 
 // ======================= Tasks for working with objects ============================
 
-const personalPlanPeter = {
-	name: "Peter",
-	age: "29",
-	skills: {
-		 languages: ['ukr', 'eng'],
-		 programmingLangs: {
-			  js: '20%',
-			  php: '10%'
-		 },
-		 exp: '1 month'
-	},
-	// Create a new method that takes an object as an argument and returns a string in the required format.
-	showAgeAndLangs: function(plan) {
-		const lang = plan.skills.languages.map(language => language.toUpperCase()).join(' ');
-		return `I am ${plan.age} and I speak languages: ${lang}`
-	}
+// const personalPlanPeter = {
+// 	name: "Peter",
+// 	age: "29",
+// 	skills: {
+// 		 languages: ['ukr', 'eng'],
+// 		 programmingLangs: {
+// 			  js: '20%',
+// 			  php: '10%'
+// 		 },
+// 		 exp: '1 month'
+// 	},
+// 	// Create a new method that takes an object as an argument and returns a string in the required format.
+// 	showAgeAndLangs: function(plan) {
+// 		const lang = plan.skills.languages.map(language => language.toUpperCase()).join(' ');
+// 		return `I am ${plan.age} and I speak languages: ${lang}`
+// 	}
 	
-};
+// };
 
-// A function that takes an object with all the data and returns a string with the experience.
+// // A function that takes an object with all the data and returns a string with the experience.
 
-function showExperience(plan) {
-		// const expect = personalPlanPeter['skills']['exp'];
-			// return expect;
-	const {exp} = plan.skills;
- 		return exp;
-}
+// function showExperience(plan) {
+// 		// const expect = personalPlanPeter['skills']['exp'];
+// 			// return expect;
+// 	const {exp} = plan.skills;
+//  		return exp;
+// }
 
-//A function that takes an object with all the data and returns a string in the required format.
+// //A function that takes an object with all the data and returns a string in the required format.
 
-function showProgrammingLangs(plan) {
-	const { programmingLangs } = plan.skills;
-	let result = '';
+// function showProgrammingLangs(plan) {
+// 	const { programmingLangs } = plan.skills;
+// 	let result = '';
 	
-	for (let lang in programmingLangs) {
-		 result += `The ${lang} language is studied by ${programmingLangs[lang]}\n`;
-	}
-	return result;
+// 	for (let lang in programmingLangs) {
+// 		 result += `The ${lang} language is studied by ${programmingLangs[lang]}\n`;
+// 	}
+// 	return result;
 
-}
+// }
 
-console.log(showExperience(personalPlanPeter));  // 1 month
-console.log(showProgrammingLangs(personalPlanPeter)); // The js language is studied by 20% The php language is studied by 10%
-console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter)); // I am 29 and I speak languages: UKR ENG
+// console.log(showExperience(personalPlanPeter));  // 1 month
+// console.log(showProgrammingLangs(personalPlanPeter)); // The js language is studied by 20% The php language is studied by 10%
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter)); // I am 29 and I speak languages: UKR ENG
