@@ -1000,27 +1000,53 @@ because it return an Array and it has property LENGTH
 
 // ======================= Arrays Methods ============================
 
-//Methods that change the array
+// //Methods that change the array
+// const arr = [1, 2, 3, 6, 8];
+// // Delete the last element in array
+// arr.pop(); 
+// console.log(arr); // [ 1, 2, 3, 6 ] 
+
+// // Add the last element to array
+// arr.push(10);
+// console.log(arr); // [ 1, 2, 3, 6, 8, 10 ]
+
+// //Delete/add the first element in array = shift / ushift 
+// // but rearly use because they change indexes of all elements in array
+// arr.shift(); // [ 2, 3, 6, 10 ]
+// console.log(arr); 
+
+// arr.unshift(0); // [ 0, 2, 3, 6, 10 ]
+// console.log(arr);  
+
+// /* 
+// [ 1, 2, 3, 6 ]
+// [ 1, 2, 3, 6, 10 ]
+// [ 2, 3, 6, 10 ]
+// [ 0, 2, 3, 6, 10 ]
+//  */
+
+// Iterate over an array
+
+// with loop
 const arr = [1, 2, 3, 6, 8];
-// Delete the last element in array
-arr.pop(); 
-console.log(arr); // [ 1, 2, 3, 6 ] 
-
-// Add the last element to array
-arr.push(10);
-console.log(arr); // [ 1, 2, 3, 6, 8, 10 ]
-
-//Delete/add the first element in array = shift / ushift 
-// but rearly use because they change indexes of all elements in array
-arr.shift(); // [ 2, 3, 6, 10 ]
-console.log(arr); 
-
-arr.unshift(0); // [ 0, 2, 3, 6, 10 ]
-console.log(arr);  
-
+for (let i = 0; i < arr.length; i++) {
+	// console.log(arr[i]);
+}
 /* 
-[ 1, 2, 3, 6 ]
-[ 1, 2, 3, 6, 10 ]
-[ 2, 3, 6, 10 ]
-[ 0, 2, 3, 6, 10 ]
- */
+1
+2
+3
+6
+8
+*/
+// for of
+const arr1 = [1, 2, 3, 6];
+for (let value of arr1) {
+	console.log(value);  
+}
+//length - в масиві скаладається з останнього індекса + 1
+console.log(arr1.length); //4
+
+arr1[99] = 0
+console.log(arr1.length); // 100
+console.log(arr1); // [ 1, 2, 3, 6, <95 empty items>, 0 ]
