@@ -1039,7 +1039,7 @@ for (let i = 0; i < arr.length; i++) {
 6
 8
 */
-// for of
+// for of - use with break & continue
 const arr1 = [1, 2, 3, 6];
 for (let value of arr1) {
 	console.log(value);  
@@ -1050,3 +1050,15 @@ console.log(arr1.length); //4
 arr1[99] = 0
 console.log(arr1.length); // 100
 console.log(arr1); // [ 1, 2, 3, 6, <95 empty items>, 0 ]
+
+// forEch() - Iterate callback function inside with 3 parametres(item, index, arr)
+
+const numbers = [2, 3, 6];
+numbers.forEach(function(item, i, arr) {
+	console.log(`${i}: ${item} inside array ${numbers}`);	
+});
+/*
+0: 2 inside array 2,3,6
+1: 3 inside array 2,3,6
+2: 6 inside array 2,3,6
+*/
