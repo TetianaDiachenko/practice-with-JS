@@ -1066,11 +1066,21 @@ because it return an Array and it has property LENGTH
 // Methods of array: split, join
 // Split - converts string to array
 
-const str = prompt('', ''); //open in browser window, where we write smth with commas
-const products = str.split('', ''); // convert these in items in array
-products.sort(); // sorts as strings in alphabetical order
-console.log(products); 
+// const str = prompt('', ''); //open in browser window, where we write smth with commas
+// const products = str.split('', ''); // convert these in items in array
+// products.sort(); // sorts as strings in alphabetical order
+// console.log(products); 
 
-// join - convert array to string
-console.log(products.join('; ')); // convert these items from array to string with ;
+// // join - convert array to string
+// console.log(products.join('; ')); // convert these items from array to string with ;
 
+// Sort in arrays
+const arrN = [2, 13, 26, 8, 10];
+arrN.sort();
+console.log(arrN); // [10, 13, 2, 26, 8]
+
+function compareNum(a, b) {
+    return a - b;
+}
+arrN.sort(compareNum); // sort numbers!!!
+console.log(arrN); // [ 2, 8, 10, 13, 26 ]
