@@ -1027,38 +1027,50 @@ because it return an Array and it has property LENGTH
 
 // Iterate over an array
 
-// with loop
-const arr = [1, 2, 3, 6, 8];
-for (let i = 0; i < arr.length; i++) {
-	// console.log(arr[i]);
-}
-/* 
-1
-2
-3
-6
-8
-*/
+// // with loop
+// const arr = [1, 2, 3, 6, 8];
+// for (let i = 0; i < arr.length; i++) {
+// 	// console.log(arr[i]);
+// }
+// /* 
+// 1
+// 2
+// 3
+// 6
+// 8
+// */
 // for of - use with break & continue
-const arr1 = [1, 2, 3, 6];
-for (let value of arr1) {
-	console.log(value);  
-}
-//length - в масиві скаладається з останнього індекса + 1
-console.log(arr1.length); //4
+// const arr1 = [1, 2, 3, 6];
+// for (let value of arr1) {
+// 	console.log(value);  
+// }
+// //length - в масиві скаладається з останнього індекса + 1
+// console.log(arr1.length); //4
 
-arr1[99] = 0
-console.log(arr1.length); // 100
-console.log(arr1); // [ 1, 2, 3, 6, <95 empty items>, 0 ]
+// arr1[99] = 0
+// console.log(arr1.length); // 100
+// console.log(arr1); // [ 1, 2, 3, 6, <95 empty items>, 0 ]
 
-// forEch() - Iterate callback function inside with 3 parametres(item, index, arr)
+// // forEch() - Iterate callback function inside with 3 parametres(item, index, arr)
 
-const numbers = [2, 3, 6];
-numbers.forEach(function(item, i, arr) {
-	console.log(`${i}: ${item} inside array ${numbers}`);	
-});
-/*
-0: 2 inside array 2,3,6
-1: 3 inside array 2,3,6
-2: 6 inside array 2,3,6
-*/
+// const numbers = [2, 3, 6];
+// numbers.forEach(function(item, i, arr) {
+// 	console.log(`${i}: ${item} inside array ${numbers}`);	
+// });
+// /*
+// 0: 2 inside array 2,3,6
+// 1: 3 inside array 2,3,6
+// 2: 6 inside array 2,3,6
+// */
+
+// Methods of array: split, join
+// Split - converts string to array
+
+const str = prompt('', ''); //open in browser window, where we write smth with commas
+const products = str.split('', ''); // convert these in items in array
+products.sort(); // sorts as strings in alphabetical order
+console.log(products); 
+
+// join - convert array to string
+console.log(products.join('; ')); // convert these items from array to string with ;
+
