@@ -1116,3 +1116,17 @@ function BinarySearch(t,A) {
     }
     return -1;
 }
+
+//Optimized version of Binary Search
+
+function BinarySearch(t,A) {
+    let i = 0, j = A.length, k; // t - the element we are looking for,
+                                // A is an ordered array in which we are searching.
+    while (i < j) {
+        k = Math.floor((i+j)/2);
+        if (t <= A[k]) j = k;
+        else i = k+1;
+    }
+    if (A[ i ] === t) return i; // Output is the index of the element being searched for.
+    else return -1;             // If the element being searched for is not in the array, then -1.
+}
