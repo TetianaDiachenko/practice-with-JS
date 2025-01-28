@@ -1075,12 +1075,44 @@ because it return an Array and it has property LENGTH
 // console.log(products.join('; ')); // convert these items from array to string with ;
 
 // Sort in arrays
-const arrN = [2, 13, 26, 8, 10];
-arrN.sort();
-console.log(arrN); // [10, 13, 2, 26, 8]
+// const arrN = [2, 13, 26, 8, 10];
+// arrN.sort();
+// console.log(arrN); // [10, 13, 2, 26, 8]
 
-function compareNum(a, b) {
-    return a - b;
+// function compareNum(a, b) {
+//     return a - b;
+// }
+// arrN.sort(compareNum); // sort numbers!!!
+// console.log(arrN); // [ 2, 8, 10, 13, 26 ]
+
+// ======================= Search Algorithms in JavaScript============================
+
+//Linear Search in JavaScript
+
+function LinearSearch(t,A) {  //t - the element we are looking for,
+    let n = A.length, i = 0;  // A - the array where we are looking for.
+    A[n] = t;
+    while (A[ i ] !== t) i++;
+    if (i < n) return i;
+    else return -1; // Output is the index of the element being searched for.
+                    // If the element being searched for is not in the array, then -1.
 }
-arrN.sort(compareNum); // sort numbers!!!
-console.log(arrN); // [ 2, 8, 10, 13, 26 ]
+
+// Binary Search in JavaScript
+/* Binary search is a highly efficient algorithm for searching a sorted array. 
+It works by comparing the search key t with the middle element of the array A[k]. 
+If they are equal, the algorithm terminates. Otherwise, the same operation is 
+repeated recursively for the first half of the array if t<A[k], 
+and for the second if t>A[k]. */
+
+function BinarySearch(t,A) {
+    let i = 0, j = A.legth - 1, k;
+
+    while (i <= j) {
+        k = Math.floor((i + j)/2);
+        if (t === A[k]) return k;
+        else if (t < A[k]) j = k-1;
+        else i = k+1;
+    }
+    return -1;
+}
