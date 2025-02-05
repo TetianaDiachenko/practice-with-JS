@@ -1130,3 +1130,50 @@ function BinarySearch(t,A) {
     if (A[ i ] === t) return i; // Output is the index of the element being searched for.
     else return -1;             // If the element being searched for is not in the array, then -1.
 }
+
+// Interpolation Search in JavaScript 
+/* Unlike binary search, which always compares the search key to the mean value of the sorted array 
+(and therefore always reduces the size of the problem by half), interpolation search takes 
+the value of the search key into account when determining the array element to compare with the key. 
+In a sense, the algorithm imitates searching for a name in a phone book.*/
+
+function InterpolationSearch(t, A) {       // t - the element we are looking for,
+    let mid, low = 0, high = A.length-1;   // A is an ordered array in which we are searching.
+    
+    while (A[low] < t && A[high] > t) {
+        mid = low + Math.floor( ((t-A[low]) * (high-low))/(A[high]-A[low]) );
+        if (A[mid] < t) low = mid+1;
+        else if (A[mid] > t) high = mid-1;
+        else return mid;
+    }
+    if (A[low] === t) return low;              // Output is the index of the element being searched for.
+    else if (A[high] === t) return high;
+    else return -1;                            // If the element being searched for is not in the array, then -1.
+}
+
+// Finding a Substring in JavaScript
+/* It is necessary to determine the index i of the leftmost character of the first substring matching 
+the pattern \mathsf{sub} in the text \mathsf{str}
+
+(for example, if str = "Lorem ipsum" and sub = "ips", then i=6).
+
+The simplest search algorithm consists of directly checking all possible offsets. 
+The check consists of sequentially comparing the characters of the pattern \mathsf{sub} with 
+the characters of the string \mathsf{str}; at the first detected mismatch of characters, 
+the check stops and the outer loop variable is increased by 1. */
+
+function SubstringSerch(sub, str) { // sub - the substring we are looking for
+                                    // str - the string we are looking for
+    let i, j, n = sub.length,
+        N = str.length - n + 1;
+
+    for (i = 0; i < N; i++) {
+        j = 0;
+        while (j < n && sub.charAt(j) === str.charAt(i+j)) j++;
+        if (j === n) return i;
+    }                                // The output is the index of the 1st character of the substring.
+    return -1;                       // If the substring we are looking for is not in the string, then -1.
+}
+// For example,
+// SubstringSearch('ips', 'Lorem ipsum') = 6,
+// SubstringSearch('dolor', 'Lorem ipsum') = -1.
