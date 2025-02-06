@@ -1194,7 +1194,6 @@ function showFamily(arr) {
         console.log(`The family is empty`);
     } else 
         console.log(`The family consists of: ${members}`); 
-    // return `The family consists of: ${arr.}`
 }
 showFamily(family); // The family consists of: Peter Ann Alex Linda
 showFamily(emptyFamily);  // The family is empty
