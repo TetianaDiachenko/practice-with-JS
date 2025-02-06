@@ -1087,93 +1087,114 @@ because it return an Array and it has property LENGTH
 
 // ======================= Search Algorithms in JavaScript============================
 
-//Linear Search in JavaScript
+// //Linear Search in JavaScript
 
-function LinearSearch(t,A) {  //t - the element we are looking for,
-    let n = A.length, i = 0;  // A - the array where we are looking for.
-    A[n] = t;
-    while (A[ i ] !== t) i++;
-    if (i < n) return i;
-    else return -1; // Output is the index of the element being searched for.
-                    // If the element being searched for is not in the array, then -1.
-}
+// function LinearSearch(t,A) {  //t - the element we are looking for,
+//     let n = A.length, i = 0;  // A - the array where we are looking for.
+//     A[n] = t;
+//     while (A[ i ] !== t) i++;
+//     if (i < n) return i;
+//     else return -1; // Output is the index of the element being searched for.
+//                     // If the element being searched for is not in the array, then -1.
+// }
 
-// Binary Search in JavaScript
-/* Binary search is a highly efficient algorithm for searching a sorted array. 
-It works by comparing the search key t with the middle element of the array A[k]. 
-If they are equal, the algorithm terminates. Otherwise, the same operation is 
-repeated recursively for the first half of the array if t<A[k], 
-and for the second if t>A[k]. */
+// // Binary Search in JavaScript
+// /* Binary search is a highly efficient algorithm for searching a sorted array. 
+// It works by comparing the search key t with the middle element of the array A[k]. 
+// If they are equal, the algorithm terminates. Otherwise, the same operation is 
+// repeated recursively for the first half of the array if t<A[k], 
+// and for the second if t>A[k]. */
 
-function BinarySearch(t,A) {
-    let i = 0, j = A.legth - 1, k;
+// function BinarySearch(t,A) {
+//     let i = 0, j = A.legth - 1, k;
 
-    while (i <= j) {
-        k = Math.floor((i + j)/2);
-        if (t === A[k]) return k;
-        else if (t < A[k]) j = k-1;
-        else i = k+1;
-    }
-    return -1;
-}
+//     while (i <= j) {
+//         k = Math.floor((i + j)/2);
+//         if (t === A[k]) return k;
+//         else if (t < A[k]) j = k-1;
+//         else i = k+1;
+//     }
+//     return -1;
+// }
 
-//Optimized version of Binary Search
+// //Optimized version of Binary Search
 
-function BinarySearch(t,A) {
-    let i = 0, j = A.length, k; // t - the element we are looking for,
-                                // A is an ordered array in which we are searching.
-    while (i < j) {
-        k = Math.floor((i+j)/2);
-        if (t <= A[k]) j = k;
-        else i = k+1;
-    }
-    if (A[ i ] === t) return i; // Output is the index of the element being searched for.
-    else return -1;             // If the element being searched for is not in the array, then -1.
-}
+// function BinarySearch(t,A) {
+//     let i = 0, j = A.length, k; // t - the element we are looking for,
+//                                 // A is an ordered array in which we are searching.
+//     while (i < j) {
+//         k = Math.floor((i+j)/2);
+//         if (t <= A[k]) j = k;
+//         else i = k+1;
+//     }
+//     if (A[ i ] === t) return i; // Output is the index of the element being searched for.
+//     else return -1;             // If the element being searched for is not in the array, then -1.
+// }
 
-// Interpolation Search in JavaScript 
-/* Unlike binary search, which always compares the search key to the mean value of the sorted array 
-(and therefore always reduces the size of the problem by half), interpolation search takes 
-the value of the search key into account when determining the array element to compare with the key. 
-In a sense, the algorithm imitates searching for a name in a phone book.*/
+// // Interpolation Search in JavaScript 
+// /* Unlike binary search, which always compares the search key to the mean value of the sorted array 
+// (and therefore always reduces the size of the problem by half), interpolation search takes 
+// the value of the search key into account when determining the array element to compare with the key. 
+// In a sense, the algorithm imitates searching for a name in a phone book.*/
 
-function InterpolationSearch(t, A) {       // t - the element we are looking for,
-    let mid, low = 0, high = A.length-1;   // A is an ordered array in which we are searching.
+// function InterpolationSearch(t, A) {       // t - the element we are looking for,
+//     let mid, low = 0, high = A.length-1;   // A is an ordered array in which we are searching.
     
-    while (A[low] < t && A[high] > t) {
-        mid = low + Math.floor( ((t-A[low]) * (high-low))/(A[high]-A[low]) );
-        if (A[mid] < t) low = mid+1;
-        else if (A[mid] > t) high = mid-1;
-        else return mid;
-    }
-    if (A[low] === t) return low;              // Output is the index of the element being searched for.
-    else if (A[high] === t) return high;
-    else return -1;                            // If the element being searched for is not in the array, then -1.
+//     while (A[low] < t && A[high] > t) {
+//         mid = low + Math.floor( ((t-A[low]) * (high-low))/(A[high]-A[low]) );
+//         if (A[mid] < t) low = mid+1;
+//         else if (A[mid] > t) high = mid-1;
+//         else return mid;
+//     }
+//     if (A[low] === t) return low;              // Output is the index of the element being searched for.
+//     else if (A[high] === t) return high;
+//     else return -1;                            // If the element being searched for is not in the array, then -1.
+// }
+
+// // Finding a Substring in JavaScript
+// /* It is necessary to determine the index i of the leftmost character of the first substring matching 
+// the pattern \mathsf{sub} in the text \mathsf{str}
+
+// (for example, if str = "Lorem ipsum" and sub = "ips", then i=6).
+
+// The simplest search algorithm consists of directly checking all possible offsets. 
+// The check consists of sequentially comparing the characters of the pattern \mathsf{sub} with 
+// the characters of the string \mathsf{str}; at the first detected mismatch of characters, 
+// the check stops and the outer loop variable is increased by 1. */
+
+// function SubstringSerch(sub, str) { // sub - the substring we are looking for
+//                                     // str - the string we are looking for
+//     let i, j, n = sub.length,
+//         N = str.length - n + 1;
+
+//     for (i = 0; i < N; i++) {
+//         j = 0;
+//         while (j < n && sub.charAt(j) === str.charAt(i+j)) j++;
+//         if (j === n) return i;
+//     }                                // The output is the index of the 1st character of the substring.
+//     return -1;                       // If the substring we are looking for is not in the string, then -1.
+// }
+// // For example,
+// // SubstringSearch('ips', 'Lorem ipsum') = 6,
+// // SubstringSearch('dolor', 'Lorem ipsum') = -1.
+
+// ======================= Tasks on working with arrays ============================
+/*
+Write a function showFamily that will take an array of strings and return a message in the desired format.
+showFamily(family) => 'The family consists of: Peter Ann Alex Linda'
+The names are automatically substituted from the array. 
+If the array is empty, then the message 'The family is empty' is displayed */
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda']; 
+const emptyFamily = [];
+
+function showFamily(arr) {
+    const members = arr.join(' ');
+    if (arr.length === 0) {
+        console.log(`The family is empty`);
+    } else 
+        console.log(`The family consists of: ${members}`); 
+    // return `The family consists of: ${arr.}`
 }
-
-// Finding a Substring in JavaScript
-/* It is necessary to determine the index i of the leftmost character of the first substring matching 
-the pattern \mathsf{sub} in the text \mathsf{str}
-
-(for example, if str = "Lorem ipsum" and sub = "ips", then i=6).
-
-The simplest search algorithm consists of directly checking all possible offsets. 
-The check consists of sequentially comparing the characters of the pattern \mathsf{sub} with 
-the characters of the string \mathsf{str}; at the first detected mismatch of characters, 
-the check stops and the outer loop variable is increased by 1. */
-
-function SubstringSerch(sub, str) { // sub - the substring we are looking for
-                                    // str - the string we are looking for
-    let i, j, n = sub.length,
-        N = str.length - n + 1;
-
-    for (i = 0; i < N; i++) {
-        j = 0;
-        while (j < n && sub.charAt(j) === str.charAt(i+j)) j++;
-        if (j === n) return i;
-    }                                // The output is the index of the 1st character of the substring.
-    return -1;                       // If the substring we are looking for is not in the string, then -1.
-}
-// For example,
-// SubstringSearch('ips', 'Lorem ipsum') = 6,
-// SubstringSearch('dolor', 'Lorem ipsum') = -1.
+showFamily(family); // The family consists of: Peter Ann Alex Linda
+showFamily(emptyFamily);  // The family is empty
