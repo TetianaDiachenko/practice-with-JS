@@ -1179,21 +1179,41 @@ because it return an Array and it has property LENGTH
 // // SubstringSearch('dolor', 'Lorem ipsum') = -1.
 
 // ======================= Tasks on working with arrays ============================
-/*
-Write a function showFamily that will take an array of strings and return a message in the desired format.
-showFamily(family) => 'The family consists of: Peter Ann Alex Linda'
-The names are automatically substituted from the array. 
-If the array is empty, then the message 'The family is empty' is displayed */
+// /* Task 1
+// Write a function showFamily that will take an array of strings and return a message in the desired format.
+// showFamily(family) => 'The family consists of: Peter Ann Alex Linda'
+// The names are automatically substituted from the array. 
+// If the array is empty, then the message 'The family is empty' is displayed */
 
-const family = ['Peter', 'Ann', 'Alex', 'Linda']; 
-const emptyFamily = [];
+// const family = ['Peter', 'Ann', 'Alex', 'Linda']; 
+// const emptyFamily = [];
 
-function showFamily(arr) {
-    const members = arr.join(' ');
-    if (arr.length === 0) {
-        console.log(`The family is empty`);
-    } else 
-        console.log(`The family consists of: ${members}`); 
+// function showFamily(arr) {
+//     const members = arr.join(' ');
+//     if (arr.length === 0) {
+//         console.log(`The family is empty`);
+//     } else 
+//         console.log(`The family consists of: ${members}`); 
+// }
+// showFamily(family); // The family consists of: Peter Ann Alex Linda
+// showFamily(emptyFamily);  // The family is empty
+
+/* Task 2
+Write a function standardizeStrings that will take an array of strings and 
+output these strings to the console in lowercase.
+Example:
+standardizeStrings(favoriteCities) will output to the console
+lisbon
+rome
+milan
+dublin
+ */
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    arr.forEach(city => {
+        console.log(city.toLowerCase());
+    });
 }
-showFamily(family); // The family consists of: Peter Ann Alex Linda
-showFamily(emptyFamily);  // The family is empty
+standardizeStrings(favoriteCities);
