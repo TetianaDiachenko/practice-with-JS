@@ -1067,7 +1067,7 @@ because it return an Array and it has property LENGTH
 // Split - converts string to array
 
 // const str = prompt('', ''); //open in browser window, where we write smth with commas
-// const products = str.split('', ''); // convert these in items in array
+// const products = str.split(',').map(line => line.trim()); // convert these in items in array   // 
 // products.sort(); // sorts as strings in alphabetical order
 // console.log(products); 
 
@@ -1080,17 +1080,21 @@ because it return an Array and it has property LENGTH
 // console.log(arrN); // [10, 13, 2, 26, 8]
 
 // function compareNum(a, b) {
-//     return a - b;
+//     return a - b;          // from small to big
 // }
 // arrN.sort(compareNum); // sort numbers!!!
 // console.log(arrN); // [ 2, 8, 10, 13, 26 ]
 
+// 0 - the same
+// 1 - true (a > b)
+// -1 - false
+
 // ======================= Search Algorithms in JavaScript============================
 
-// //Linear Search in JavaScript
+//Linear Search in JavaScript
 
 // function LinearSearch(t,A) {  //t - the element we are looking for,
-//     let n = A.length, i = 0;  // A - the array where we are looking for.
+//     const n = A.length, i = 0;  // A - the array where we are looking for.
 //     A[n] = t;
 //     while (A[ i ] !== t) i++;
 //     if (i < n) return i;
@@ -1151,16 +1155,16 @@ because it return an Array and it has property LENGTH
 //     else return -1;                            // If the element being searched for is not in the array, then -1.
 // }
 
-// // Finding a Substring in JavaScript
-// /* It is necessary to determine the index i of the leftmost character of the first substring matching 
-// the pattern \mathsf{sub} in the text \mathsf{str}
+// Finding a Substring in JavaScript
+/* It is necessary to determine the index i of the leftmost character of the first substring matching 
+the pattern \mathsf{sub} in the text \mathsf{str}
 
-// (for example, if str = "Lorem ipsum" and sub = "ips", then i=6).
+(for example, if str = "Lorem ipsum" and sub = "ips", then i=6).
 
-// The simplest search algorithm consists of directly checking all possible offsets. 
-// The check consists of sequentially comparing the characters of the pattern \mathsf{sub} with 
-// the characters of the string \mathsf{str}; at the first detected mismatch of characters, 
-// the check stops and the outer loop variable is increased by 1. */
+The simplest search algorithm consists of directly checking all possible offsets. 
+The check consists of sequentially comparing the characters of the pattern \mathsf{sub} with 
+the characters of the string \mathsf{str}; at the first detected mismatch of characters, 
+the check stops and the outer loop variable is increased by 1. */
 
 // function SubstringSerch(sub, str) { // sub - the substring we are looking for
 //                                     // str - the string we are looking for
@@ -1174,9 +1178,9 @@ because it return an Array and it has property LENGTH
 //     }                                // The output is the index of the 1st character of the substring.
 //     return -1;                       // If the substring we are looking for is not in the string, then -1.
 // }
-// // For example,
-// // SubstringSearch('ips', 'Lorem ipsum') = 6,
-// // SubstringSearch('dolor', 'Lorem ipsum') = -1.
+// For example,
+// SubstringSearch('ips', 'Lorem ipsum') = 6,
+// SubstringSearch('dolor', 'Lorem ipsum') = -1.
 
 // ======================= Tasks on working with arrays ============================
 // /* Task 1
@@ -1209,11 +1213,11 @@ milan
 dublin
  */
 
-const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
 
-function standardizeStrings(arr) {
-    arr.forEach(city => {
-        console.log(city.toLowerCase());
-    });
-}
-standardizeStrings(favoriteCities);
+// function standardizeStrings(arr) {
+//     arr.forEach(city => {
+//         console.log(city.toLowerCase());
+//     });
+// }
+// standardizeStrings(favoriteCities);
