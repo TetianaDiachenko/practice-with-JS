@@ -1221,3 +1221,14 @@ dublin
 //     });
 // }
 // standardizeStrings(favoriteCities);
+
+/* Task 3
+Write a function reverse that takes a string 
+and returns that string in reverse order.*/
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+    console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
+}
+reverse(someString); // string strange some is This
