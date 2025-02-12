@@ -1227,8 +1227,15 @@ Write a function reverse that takes a string
 and returns that string in reverse order.*/
 
 const someString = 'This is some strange string';
+const arrTest = [1, 2, 3];
 
 function reverse(str) {
-    console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
+    if (typeof str !== 'string') {
+        console.log('Error');
+    } else {
+        console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
+    }
+
 }
 reverse(someString); // string strange some is This
+reverse(arrTest);
