@@ -1226,21 +1226,21 @@ dublin
 Write a function reverse that takes a string 
 and returns that string in reverse order.*/
 
-// const someString = 'This is some strange string';
-// const arrTest = [1, 2, 3];
+const someString = 'This is some strange string';
+const arrTest = [1, 2, 3];
 
-// function reverse(str) {
-//     if (typeof str !== 'string') {
-//         console.log('Error');
-//     } else {
-//         console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
-//     }
+function reverse(str) {
+    if (typeof str !== 'string') {
+        console.log('Error');
+    } else {
+        console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
+    }
 
-// }
-// reverse(someString); // string strange some is This
-// reverse(arrTest); // Error
+}
+reverse(someString); // string strange some is This
+reverse(arrTest); // Error
 
-/* Task 3 
+/* Task 4 
 You need to create the main ATM function availableCurr, 
 which takes two arguments: the first is an array with all available currencies 
 from two banks at once (now let's imagine that they cannot be repeated), 
@@ -1263,24 +1263,34 @@ Note:
 
 const baseCurrencies = ['USD', 'EUR', 'UAH'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY', 'USD'];
+const emptyCurrencies = [];
 
 function concatArrays(arr1, arr2) {
     // const allArrs = arr1.concat(arr2); // if items in arrays are different
-    const allArrs = [... new Set(arr1.concat(arr2))]; // checking currencies from two banks to make sure they are not duplicates
+    // const allArrs = [... new Set(arr1.concat(arr2))]; // checking currencies from two banks to make sure they are not duplicates
+    const allArrs = [... new Set([...arr1, ...arr2])];
     return allArrs; 
 }
 
-function availableCurr(arr, missingCurr) {
+function availableCurr(arr, ...missingCurr) {
 
     if (arr.length === 0) {
         console.log('No available currencies');
-    } else {
-
-    }
+        return
+    } 
+        
+    // const filterArr = arr.filter( currency => currency !== missingCurr);
+    const filterArr = arr.filter( currency => !missingCurr.includes(currency)); // chacking in arr missingCurr
+    
+    console.log(`Available currencies: \n${filterArr.join('\n')}\n`);
+    
 };
 
 const allCurrencies = concatArrays(baseCurrencies, additionalCurrencies);
 
 console.log(allCurrencies); // [ 'USD', 'EUR', 'UAH', 'RUB', 'CNY' ]
-
-
+console.log(availableCurr(emptyCurrencies)); // No available currencies 
+console.log(availableCurr(allCurrencies, 'RUB','USD', 'EUR')); 
+/* Available currencies: 
+UAH
+CNY*/
