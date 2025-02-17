@@ -1296,3 +1296,5 @@ console.log(availableCurr(allCurrencies, 'RUB','USD', 'EUR'));
 /* Available currencies: 
 UAH
 CNY*/
+
+// This is test commit to delete 
