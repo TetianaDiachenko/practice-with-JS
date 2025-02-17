@@ -1233,11 +1233,13 @@ function reverse(str) {
     if (typeof str !== 'string') {
         console.log('Error');
     } else {
-        console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
+        // console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
+        console.log(str.split('').reverse().join('')); // revers every letter   
     }
 
 }
-reverse(someString); // string strange some is This
+// reverse(someString); // string strange some is This
+reverse(someString); // gnirts egnarts emos si sihT
 reverse(arrTest); // Error
 
 /* Task 4 
@@ -1282,7 +1284,7 @@ function availableCurr(arr, ...missingCurr) {
     // const filterArr = arr.filter( currency => currency !== missingCurr);
     const filterArr = arr.filter( currency => !missingCurr.includes(currency)); // chacking in arr missingCurr
     
-    console.log(`Available currencies: \n${filterArr.join('\n')}\n`);
+    console.log(`Available currencies: \n${filterArr.join('\n')}`);
     
 };
 
