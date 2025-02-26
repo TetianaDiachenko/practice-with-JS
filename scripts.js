@@ -1226,21 +1226,21 @@ dublin
 Write a function reverse that takes a string 
 and returns that string in reverse order.*/
 
-const someString = 'This is some strange string';
-const arrTest = [1, 2, 3];
+// const someString = 'This is some strange string';
+// const arrTest = [1, 2, 3];
 
-function reverse(str) {
-    if (typeof str !== 'string') {
-        console.log('Error');
-    } else {
-        // console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
-        console.log(str.split('').reverse().join('')); // revers every letter   
-    }
+// function reverse(str) {
+//     if (typeof str !== 'string') {
+//         console.log('Error');
+//     } else {
+//         // console.log(str.split(' ').reverse().join(' ')); //string to arr - reverse - arr to string
+//         console.log(str.split('').reverse().join('')); // revers every letter   
+//     }
 
-}
-// reverse(someString); // string strange some is This
-reverse(someString); // gnirts egnarts emos si sihT
-reverse(arrTest); // Error
+// }
+// // reverse(someString); // string strange some is This
+// reverse(someString); // gnirts egnarts emos si sihT
+// reverse(arrTest); // Error
 
 /* Task 4 
 You need to create the main ATM function availableCurr, 
@@ -1284,17 +1284,18 @@ function availableCurr(arr, ...missingCurr) {
     // const filterArr = arr.filter( currency => currency !== missingCurr);
     const filterArr = arr.filter( currency => !missingCurr.includes(currency)); // chacking in arr missingCurr
     
-    console.log(`Available currencies: \n${filterArr.join('\n')}`);
+    const result = `Available currencies: \n${filterArr.join('\n')}`;
+return result;
     
 };
 
 const allCurrencies = concatArrays(baseCurrencies, additionalCurrencies);
 
-console.log(allCurrencies); // [ 'USD', 'EUR', 'UAH', 'RUB', 'CNY' ]
-console.log(availableCurr(emptyCurrencies)); // No available currencies 
+// console.log(allCurrencies); // [ 'USD', 'EUR', 'UAH', 'RUB', 'CNY' ]
+// console.log(availableCurr(emptyCurrencies)); // No available currencies 
 console.log(availableCurr(allCurrencies, 'RUB','USD', 'EUR')); 
 /* Available currencies: 
 UAH
 CNY*/
 
-// This is test commit to delete 
+// This is test commit to delete later
