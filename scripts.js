@@ -1263,39 +1263,60 @@ Note:
 - Data for the first argument must come from two banks at once, first baseCurrencies, then additionalCurrencies in order
 */
 
-const baseCurrencies = ['USD', 'EUR', 'UAH'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY', 'USD'];
-const emptyCurrencies = [];
+// const baseCurrencies = ['USD', 'EUR', 'UAH'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY', 'USD'];
+// const emptyCurrencies = [];
 
-function concatArrays(arr1, arr2) {
-    // const allArrs = arr1.concat(arr2); // if items in arrays are different
-    // const allArrs = [... new Set(arr1.concat(arr2))]; // checking currencies from two banks to make sure they are not duplicates
-    const allArrs = [... new Set([...arr1, ...arr2])];
-    return allArrs; 
-}
+// function concatArrays(arr1, arr2) {
+//     // const allArrs = arr1.concat(arr2); // if items in arrays are different
+//     // const allArrs = [... new Set(arr1.concat(arr2))]; // checking currencies from two banks to make sure they are not duplicates
+//     const allArrs = [... new Set([...arr1, ...arr2])];
+//     return allArrs; 
+// }
 
-function availableCurr(arr, ...missingCurr) {
+// function availableCurr(arr, ...missingCurr) {
 
-    if (arr.length === 0) {
-        console.log('No available currencies');
-        return
-    } 
+//     if (arr.length === 0) {
+//         console.log('No available currencies');
+//         return
+//     } 
         
-    // const filterArr = arr.filter( currency => currency !== missingCurr);
-    const filterArr = arr.filter( currency => !missingCurr.includes(currency)); // chacking in arr missingCurr
+//     // const filterArr = arr.filter( currency => currency !== missingCurr);
+//     const filterArr = arr.filter( currency => !missingCurr.includes(currency)); // chacking in arr missingCurr
     
-    const result = `Available currencies: \n${filterArr.join('\n')}`;
-return result;
+//     const result = `Available currencies: \n${filterArr.join('\n')}`;
+// return result;
     
-};
+// };
 
-const allCurrencies = concatArrays(baseCurrencies, additionalCurrencies);
+// const allCurrencies = concatArrays(baseCurrencies, additionalCurrencies);
 
-// console.log(allCurrencies); // [ 'USD', 'EUR', 'UAH', 'RUB', 'CNY' ]
-// console.log(availableCurr(emptyCurrencies)); // No available currencies 
-console.log(availableCurr(allCurrencies, 'RUB','USD', 'EUR')); 
-/* Available currencies: 
-UAH
-CNY*/
+// // console.log(allCurrencies); // [ 'USD', 'EUR', 'UAH', 'RUB', 'CNY' ]
+// // console.log(availableCurr(emptyCurrencies)); // No available currencies 
+// console.log(availableCurr(allCurrencies, 'RUB','USD', 'EUR')); 
+// /* Available currencies: 
+// UAH
+// CNY*/
 
 // This is test commit to delete later
+
+// ======================= Tasks on working with arrays from learnJs ============================
+
+// Task 1: Enter text of the type border-left-width in borderLeftWidth
+
+function camelize(str) {
+    return str
+        .split('-') // 'background', 'color' ... '', 'webkit', 'transition' 
+        .filter(word => word !== '') // 'background', 'color' ... 'webkit', 'transition'
+        .map((word, index) => {
+            if (index === 0 && str[0] !== '-') {
+                return word;
+            } else {
+                return word.charAt(0).toUpperCase() + word.slice(1); // 1 letter Big + rest of the word
+            }
+        })
+        .join('')
+}
+console.log(camelize("background-color"));
+console.log(camelize("list-style-image"));
+console.log(camelize("-webkit-transition"));
